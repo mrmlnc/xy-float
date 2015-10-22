@@ -1,0 +1,24 @@
+{
+  "name": "xy-float",
+  "version": "1.0.0",
+  "description": "XY is a small and very flexible collection of mixins for building grids based on floating elements",
+  "license": "MIT",
+  "homepage": "https://github.com/mrmlnc/xy-float",
+  "author": {
+    "name": "Denis Malinochkin",
+    "url": "canonium.com"
+  },
+  "keywords": [
+    "grid",
+    "mixins",
+    "framework",
+    "float",
+    "less",
+    "sass",
+    "stylus"
+  ],
+  "ignore": [
+    "**/.*",
+    "tests"
+  ]
+}

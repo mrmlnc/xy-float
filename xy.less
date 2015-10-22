@@ -1,0 +1,157 @@
+//
+// Name:        XY float
+// Description: XY is a small and very flexible collection of mixins for
+//              building grids based on floating elements
+// Version:     1.0.0
+//
+// Author:      Denis Malinochkin
+// GitHub:      https://github.com/mrmlnc/xy-float
+//
+// twitter:     @mrmlnc
+//
+
+
+//
+// Container
+//
+
+// Creates a container
+.xy-make-container(@gutter: 30px) {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Defines of the maximum width for the container
+.xy-make-container-width(@breakpoint, @width) {
+  @media (min-width: @breakpoint) {
+    width: @width;
+  }
+}
+
+
+//
+// Row
+//
+
+// Creates a row
+.xy-make-row(@gutter: 30px) {
+  margin-left: (@gutter / -2);
+  margin-right: (@gutter / -2);
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+//
+// Column
+//
+
+// Creates a column
+.xy-make-column(@gutter: 30px) {
+  position: relative;
+  min-height: 1px;
+  float: left;
+  width: 100%;
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+}
+
+// Defines of the maximum width for the column
+.xy-make-columns-width(@alias, @count) {
+  .loop(@index: 1) when (@index =< @count) {
+    &-@{alias}-@{index} {
+      width: percentage(@index / @count);
+    }
+
+    .loop(@index + 1);
+  }
+
+  .loop();
+}
+
+// Defines of offset for the column
+.xy-make-columns-offset(@alias, @count) {
+  .loop(@index: 0) when (@index =< @count) {
+    &-@{alias}-offset-@{index} {
+      margin-left: percentage(@index / @count);
+    }
+
+    .loop(@index + 1);
+  }
+
+  .loop();
+}
+
+// Defines of push for the column
+.xy-make-columns-push(@alias, @count) {
+  .loop(@index: 0) when (@index =< @count) {
+    & when (@index = 0) {
+      &-@{alias}-push-@{index} {
+        left: auto;
+      }
+    }
+    & when not (@index = 0) {
+      &-@{alias}-push-@{index} {
+        left: percentage(@index / @count);
+      }
+    }
+
+    .loop(@index + 1);
+  }
+
+  .loop();
+}
+
+// Defines of pull for the column
+.xy-make-columns-pull(@alias, @count) {
+  .loop(@index: 0) when (@index =< @count) {
+    & when (@index = 0) {
+      &-@{alias}-pull-@{index} {
+        right: auto;
+      }
+    }
+    & when not (@index = 0) {
+      &-@{alias}-pull-@{index} {
+        right: percentage(@index / @count);
+      }
+    }
+
+    .loop(@index + 1);
+  }
+
+  .loop();
+}
+
+
+//
+// Generator
+//
+
+// Generator complete collection of styles for a single alias
+.xy-make-grid-columns(@alias, @breakpoint, @count) {
+  @media (min-width: @breakpoint) {
+    .xy-make-columns-width(@alias, @count);
+    .xy-make-columns-offset(@alias, @count);
+    .xy-make-columns-push(@alias, @count);
+    .xy-make-columns-pull(@alias, @count);
+  }
+}
+
+.xy-make-grid-columns(@alias, @count) {
+  .xy-make-columns-width(@alias, @count);
+  .xy-make-columns-offset(@alias, @count);
+  .xy-make-columns-push(@alias, @count);
+  .xy-make-columns-pull(@alias, @count);
+}
