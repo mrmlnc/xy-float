@@ -1,6 +1,6 @@
 # XY (float)
 
-> XY is a small and very flexible collection of mixins for building grids based on floating elements.
+> XY (float) is a small and very flexible collection of mixins for building grids based on floating elements.
 
 ## What is?
 
