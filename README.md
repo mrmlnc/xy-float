@@ -2,6 +2,8 @@
 
 > XY (float) is a small and very flexible collection of mixins for building grids based on floating elements.
 
+![Bower version](https://img.shields.io/bower/v/xy-float.svg)
+
 ## What is?
 
 This is a collection of mixins for all preprocessors (Less, Stylus, Sass), which you can use to create a grid that is convenient for you and your project.
@@ -10,7 +12,7 @@ If you need to set only the width of columns - you just do it. Later you can add
 
 ## WTF? Where flexbox?
 
-Coming soon in **XY (flexbox)**.
+See the [XY (flexbox)](https://github.com/mrmlnc/xy-flexbox)
 
 ## How to use
 
