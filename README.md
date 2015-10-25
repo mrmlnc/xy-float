@@ -111,7 +111,7 @@ Parameters:
 }
 ```
 
-More examples for all preprocessors can be seen in the [tests](https://github.com/mrmlnc/xy/tree/master/tests) directory.
+More examples for all preprocessors can be seen in the [tests](https://github.com/mrmlnc/xy-float/tree/master/tests) directory.
 
 ## License
 
