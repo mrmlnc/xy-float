@@ -12,7 +12,11 @@ If you need to set only the width of columns - you just do it. Later you can add
 
 ## WTF? Where flexbox?
 
-See the [XY (flexbox)](https://github.com/mrmlnc/xy-flexbox)
+See the [XY (flexbox)](https://github.com/mrmlnc/xy-flexbox).
+
+## Have suggestions?
+
+Welcome to the [Issues](https://github.com/mrmlnc/xy-float/issues)!
 
 ## How to use
 
@@ -75,7 +79,7 @@ Parameters:
 
 Parameters:
 
-  * **alias** - column alias
+  * **alias** - the alias of the current layout (breakpoint)
   * **count** - the number of columns
 
 ### xy-make-grid-columns
@@ -84,9 +88,16 @@ Parameters:
 
 Parameters:
 
-  * **alias** - column alias
+  * **alias** - the alias of the current layout (breakpoint)
   * **breakpoint** (optional) - device breakpoint
   * **count** - the number of columns
+
+Includes:
+
+  * xy-make-columns-width
+  * xy-make-columns-offset
+  * xy-make-columns-push
+  * xy-make-columns-pull
 
 ## Examples
 
