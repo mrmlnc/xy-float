@@ -32,7 +32,7 @@
 // Defines of the maximum width for the container
 @mixin xy-make-container-width($breakpoint, $width) {
   @media (min-width: $breakpoint) {
-    width: $width;
+    max-width: $width;
   }
 }
 
